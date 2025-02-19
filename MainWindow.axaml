@@ -1,0 +1,16 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="VisionHelper"
+        Width="100" Height="120"
+        WindowStartupLocation="Manual"
+        ShowInTaskbar="False"
+        Topmost="True"
+        CanResize="True"
+        SizeToContent="WidthAndHeight"
+        x:Class="VisionHelperGUI.MainWindow">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+        <Button x:Name="CaptureButton" Content="👁" Width="60" Height="60" FontSize="30"/>
+        <TextBlock Name="ResultText" Text="Clique para capturar" FontSize="12" TextAlignment="Center" TextWrapping="Wrap" MaxWidth="300" Margin="5"/>
+        <Button x:Name="ClearButton" Content="Limpar" Width="80" Height="30" IsVisible="False"/>
+    </StackPanel>
+</Window>
