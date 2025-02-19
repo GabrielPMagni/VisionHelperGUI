@@ -10,6 +10,7 @@ namespace VisionHelperGUI
     {
         private readonly ScreenCaptureService _screenCaptureService;
         private readonly OpenAiService _openAiService;
+        private readonly TextToSpeechService _textToSpeechService;
 
         public MainWindow()
         {
@@ -22,6 +23,7 @@ namespace VisionHelperGUI
             
             _screenCaptureService = new ScreenCaptureService();
             _openAiService = new OpenAiService(apiKey);
+            _textToSpeechService = new TextToSpeechService();
 
             
             CaptureButton.Click += OnCaptureClick;
@@ -67,6 +69,9 @@ namespace VisionHelperGUI
                 ResultText.Text = $"Descrição: {description}";
 
                 
+                _textToSpeechService.Speak(description);
+
+                
                 ClearButton.IsVisible = true;
 
                 
@@ -83,7 +88,6 @@ namespace VisionHelperGUI
             ResultText.Text = "Clique para capturar";
             ClearButton.IsVisible = false;
 
-            
             this.Width = 100;
             this.Height = 120;
         }
